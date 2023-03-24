@@ -1,0 +1,18 @@
+goal app create --creator $ONE --approval-prog Lab3/approval.teal --clear-prog Lab3/clear.teal --global-ints 1 --global-byteslices 0 --local-ints 1 --local-byteslices 0
+
+app index 166599656
+GOCZ4RIHOS4CIC432TYBUBK7N7H6NSQSZOM3KQ2RRSXYXBYY2AB4CK7N5E
+
+goal app optin --app-id $APP -f $ONE   
+
+goal app call --app-id $APP -f $ONE --app-arg 'string:Add_Global'
+
+goal app call --app-id $APP -f $ONE --app-arg 'string:Deduct_Global'
+
+goal app call --app-id $APP -f $ONE --app-arg 'string:Add_Local'
+
+goal app call --app-id $APP -f $ONE --app-arg 'string:Deduct_Local'
+
+goal app read --global --app-id 166599656
+
+goal app read --local -f GOCZ4RIHOS4CIC432TYBUBK7N7H6NSQSZOM3KQ2RRSXYXBYY2AB4CK7N5E --app-id 166599656
